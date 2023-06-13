@@ -1,5 +1,5 @@
 /* UA Resets */
-body{
+body,dl,dt,dd{
   margin: initial;
 }
 /* layout */
@@ -8,6 +8,10 @@ body{
   width: 960px;
   margin: 0 auto;
 }
+img{
+  max-width: 100%;
+}
+
 /* typography */
 :root{
   font-family: 'Nanum Gothic', sans-serif;
@@ -51,7 +55,72 @@ body{
  letter-spacing: .4em;
 
 }
-.main{
+
+
+
+.accordion{
+ box-shadow: insetr 0 0 10px red;
+ display: flex;
+ height: 500px;
+ /* align-items: stretch; */
+ overflow: hidden;
+}
+.accordion-item{
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  transition: flex-grow .4s;
+  position: relative;
+  /* z-index: 1; */
+  transform:translate(0);       /*  스테킹콘테스트에서 싸인멕락이라는관점에서 공부해야한다.*/
+  display: flex;
+}
+.accrdion-item-main{
+  background-color: rgb(0 0 0/.6);
+  margin: 40px;
+  padding: 20px;  
+  margin: auto 20px 20px 20px;/*  display: flex;사용해서 */
+  border-radius: 20px;
+  backdrop-filter:blur(10px) ;
+}
+
+.accordion-item dt{
+ color: orange;
+ font-size: 2.0em;
+ margin-bottom: 10px;
+ width: 400px;
+}
+.accordion-item dd{
+  
+}
+.accordion-item:hover{
+  flex-grow: 2;
+}
+.accordion-item:nth-child(1){
+  box-shadow: inset 0 0 10px rgb(45, 240, 11);
+
+}
+.accordion-item:nth-child(2){
+  box-shadow: inset 0 0 10px rgb(110, 108, 110);
+
+}
+.accordion-item:nth-child(3){
+  box-shadow: inset 0 0 10px rgb(55, 54, 55);
+
+}
+.accordion-item-background{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;/*이미지찌그러지는것은 커버하는것*/
+  z-index: -1;
+  opacity:.5;
+}
+.accordion-item:hover .accordion-item-background{
+opacity:1;
+
   background-color: #999;
   padding: 40px 0;
 }
