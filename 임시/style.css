@@ -1,0 +1,105 @@
+
+
+li{list-style-type: none;}
+
+a{color:inherit;text-decoration: inherit;}
+
+img{vertical-align: top;}
+
+button{appearance:initial;font-family: inherit;font-size: inherit;background-color: inherit;}
+button{all:unset;}
+/* Typography */
+
+:root{font-family: 'Montserrat',sans-serit; font-weight: 400;}
+
+/* Layouts */
+.l_wrapper{max-width: 1080px;padding: 0 40px;margin: 0 auto;}
+
+/* Variables */
+
+:root{
+  --header-height:80px;
+  --duration:.4s;
+  --color-promary:dodgerblue;
+  --color-gray-dark:#222;
+  --color-white:#fff;
+}
+
+/* Commons */
+.button{background-color:var(--color-primary);color: white;}
+
+
+/* Components */
+body{background-color: var(--color-gray-dark);}
+.header{
+  color:white;
+  position:flexed;
+  left: 0;
+  right: 0;
+  top: 0;
+  color:white;
+  font-weight: 700;
+  letter-spacing: .1em;
+  transition:color var(--duration);
+  box-shadow:inset 0 0 10px red;
+}
+.header::before{
+  content:'';
+  background-color: var(--color-white);
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 500px;
+  z-index: -1;
+  transform:translateY(calc(-1 * var(--header-height)));
+  box-shadow:inset 0 0 10px skyblue;
+
+}
+.header::after{
+  content:'';
+  background-color: transparent;
+  trainsition:background-color var(--duration);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  top: var(--header-height);
+  box-shadow:inset 0 0 100px purple;
+}
+
+.header:hover{color:var(--color-gray-dark);}
+.header:hover::before{transform:translateY(0);}
+.header:hover::after{background-color: rgb(255 255 255 / .04);}
+.header-inside{
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+  gap: 10px;
+  box-shadow:inset 0 0 30px yellow;
+}
+
+.header-logo{
+  flex-basis: 160px;
+  flex-shrink: 0;
+  box-shadow:inset 0 0 30px pink;
+}
+.header-nav{
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  box-shadow:inset 0 0 30px lime;
+}
+.header-nav.type_main{
+  flex-grow: 1;
+  box-shadow:inset 0 0 30px deeppink;
+}
+.header-menu{display: flex;align-items: center;}
+.header-menu.type_main{flex-grow: 1;box-shadow:inset 0 0 10px dodgerblue;}
+.header-menu-list{display: flex;}
+.header-menu-anchor{padding: 0 20px;height: var(--header-height);line-height: var(--header-height);display: block;position: relative;}
+.header-menu-anchor::after{content:'';background-color: currentColor;position: absolute;left: 0;right: 0;bottom: 0;height: 2px;transform:scaleX(0)}
+.header-menu-anchor:hover::after{transform:scaleX(1)}
+.cover{height: 900px;min-height: 100vh;}
+.cover img{width: 100%;height: 100px;object-fit: cover;}
+

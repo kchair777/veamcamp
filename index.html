@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>  
+<!-- 1:40 -->
+<body>
+  <header class="header">
+    <div class="l_wrapper">
+      <div class="header-inside">
+        <a href="" class="header-logo">
+          <img src="./logo.jpg" alt="">
+        </a>
+        <nav class="header-nav main_menu">
+          <ul class="header-nav-list">
+            <li class="header-nav-list-item">
+              <a class="header-nav-anchor"href="#">LIVE</a>
+            <div class="header-nav-sub">  
+              <ul class="header-nav-sub-list">
+                <li><a href="https://naver.com">HTML+CSS</a> </li>
+                <li><a href="https://google.com">JavaScript</a> </li>
+                <li><a href="#">React</a> </li>
+                <li><a href="#">Vue</a> </li>
+              </ul>
+              <div class="header-nav-sub-side">
+                <div class="card">
+                  <img src="./cover01.png" alt="">
+                </div>
+              </div>
+            </div>
+            </li>
+            <li class="header-nav-list-item">
+              <a class="header-nav-anchor"href="#">CLASS</a>
+            <div class="header-nav-sub">
+              <div class="header-nav-sub">  
+                <ul class="header-nav-sub-list">
+                  <li><a href="https://naver.com">Class+HTML+CSS</a> </li>
+                  <li><a href="https://google.com">Class+JavaScript</a> </li>
+                  <li><a href="#">Class+React</a> </li>
+                  <li><a href="#">Class+Vue</a> </li>
+                </ul>
+                <div class="header-nav-sub-side">
+                  <div class="card">
+                    <img src="./cover01.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </li>
+          </ul>
+        </nav>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-list-item">
+              <a class="header-nav-anchor"href="">Login</a></li>
+            
+          </ul>
+          <button class="button" type="button">go pro</button>
+        </nav>
+      </div>
+      
+    </div>
+   
+  </header>
+
+  <div class="cover">
+    <img src="./cover.jpg" alt="">
+  </div>
+  <script>
+    
+    const el_list_item = document.querySelectorAll(".header-nav-list-item");
+    const el_header = document.querySelector(".header")
+
+    el_list_item.forEach((item) => {
+      item.andEventListener("mouseover",(e) => {
+        const sub = e.currentTarget.querySelector(".header-nav-sub")
+        if(sub) el_header.classList.add("is_hovered")
+      })
+      item.addEventListener("mouseover",() => {
+        el_header.classList.remove("is_hovered")
+      })
+    });
+            
+
+  </script>
+
+  <!-- 9.23 -->
+
+</body>
+</html>
